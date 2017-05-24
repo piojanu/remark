@@ -81,9 +81,6 @@ Powiedz co to za czasopismo.
 ]
 
 .right-column[
-> Według silnej sztucznej inteligencji, komputer nie jest jedynie narzędziem do studiowania działania umysłu, raczej odpowiednio zaprogramowany komputer jest w rzeczywistości umysłem..red[&#91;1&#93;] 
-
-.footnote[.red[&#91;1&#93;] John Searle, Behavioral and Brain Sciences, vol. 3, 1980]
 ]
 
 ---
@@ -103,19 +100,6 @@ Powiedz co to za czasopismo.
 ## RL
 ### - Metoda
 ### - Agent
-### - Q-learning
-]
-
-.right-column[
-]
-
----
-
-.left-column[
-## RL
-### - Metoda
-### - Agent
-### - Q-learning
 ### - Nagroda
 ]
 
@@ -128,10 +112,156 @@ Powiedz co to za czasopismo.
 ## RL
 ### - Metoda
 ### - Agent
-### - Q-learning
 ### - Nagroda
+### - Q-learning
+]
+
+.right-column[
+]
+
+---
+
+.left-column[
+## RL
+### - Metoda
+### - Agent
+### - Nagroda
+### - Q-learning
 ### - Deep Q-learning
 ]
 
 .right-column[
 ]
+
+---
+
+.left-column[
+## Przykłady
+### - Seaquest
+]
+
+.right-column[
+### "Wartość" przykładowych stanów
+![:scale 100%](./Reinforcement Learning.d/Seaquest_1.png)
+![:scale 100%](./Reinforcement Learning.d/Seaquest_2.png)
+1. Kiedy przeciwnik pojawia się z lewej strony ekranu, funkcja wartosci zwraca większe wartości.
+2. Zaraz przed uderzeniem torpedy w przeciwnika, funkcja wartości ma największą wartość.
+3. Po zniszczeniu przeciwnika wartość spada.
+]
+
+???
+
+Powiedz co przedstawiają obrazki.
+
+---
+
+.left-column[
+## Przykłady
+### - Seaquest
+### - t-SNE
+]
+
+.right-column[
+![:scale 100%](./Reinforcement Learning.d/t-SNE.png)
+]
+
+???
+
+1. t-SNE to metoda reprezentowania wielowymiarowej przestrzeni w 2D. Stany "podobne" leżą bliżej siebie.
+2. Obrazki są związane z konkretnymi stanami i ich wartościami (oczekiwaną nagrodą).
+3. Górne lewe i środkowe oraz dolne prawe nie są podobne percepcyjnie, ale są podobne swoją wartoscią i dlatego leżą blisko siebie. Sieć potrafiła się tego nauczyć.
+
+---
+
+.left-column[
+## Przykłady
+### - Seaquest
+### - t-SNE
+### - Porównanie
+]
+
+.right-column[
+![:scale 90%](./Reinforcement Learning.d/Comparison.png)
+]
+
+???
+
+Co przedstawia wykres. Procenty to jak dobrze względem człowieka poradził sobie model (w uproszczeniu).
+
+---
+
+.left-column[
+## Przykłady
+### - Seaquest
+### - t-SNE
+### - Porównanie
+]
+
+.right-column[
+## Montezuma's Revenge
+![:scale 90%](./Reinforcement Learning.d/Montezuma's_Revenge.png)
+Środowisko w tej grze jest bardzo złożone i różnorodne, a cele nie są trywialne.
+]
+
+???
+
+Środowisko w tej grze jest bardzo złożone i różnorodne, a cele nie są trywialne.
+
+---
+
+.left-column[
+## Przykłady
+### - Seaquest
+### - t-SNE
+### - Porównanie
+]
+
+.right-column[
+## Video Pinball
+![:scale 90%](./Reinforcement Learning.d/video_pinball.png)
+Proste środowisko i jasno zdefiniowane nagrody.
+]
+
+???
+
+Proste środowisko i jasno zdefiniowane nagrody.
+
+---
+
+.left-column[
+## Przykłady
+### - Seaquest
+### - t-SNE
+### - Porównanie
+### - Filmiki
+]
+
+.right-column[
+## Przykładowe rozgrywki
+[Film](https://www.youtube.com/watch?v=iqXKQf2BOSE) przedstawia dwie przykładowe rozgrywki w różnych stadiach rozwoju sieci. Gry to Breakout oraz Space Invaders.
+]
+
+
+---
+
+# Podsumowanie
+
+## Jeden model, wiele problemów
+DeepMind przedstawiło model, który otrzymując "gołe" piksele oraz nagrody jako wejścia, z użyciem jednej i tej samej metody uczenia jest w stanie zrozumieć wiele zróżnicowanych środowisk.
+
+## Neurobiologiczne poszlaki
+Model ten musiał sam nauczyć się widzieć, a następnie zrozumieć co widzi. Zrobił to otrzymując jedynie nagrody za podjęte przez siebie akcje. Sugeruje to, że sygnały o nagrodach podczas rozwijania percepcji, mogą mieć również wpływ na rozwój kory wzrokowej.
+
+???
+
+1. Model i metody uczenia te same, ale różne środowiska
+2. Powiązanie z rozwojem kory wzrokowej.
+
+---
+
+class: middle
+
+# Źródła
+https://www.nervanasys.com/demystifying-deep-reinforcement-learning/  
+https://arxiv.org/abs/1312.5602  
+https://www.nature.com/nature/journal/v518/n7540/full/nature14236.html
