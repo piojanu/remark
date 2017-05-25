@@ -26,7 +26,7 @@ Ich celem jest "rozwiązać inteligencję" i tym samym stworzyć system, który 
 ???
 
 1. Hassabis i Legg poznali się na University College London.
-2. Stworzenie sztucznej inteligencji, która będzie w stanie ogarnąć wiele problemów, nie potrzebując przy tym specyficznych zmian, aby to osiągnać.
+2. Stworzenie sztucznej inteligencji, która będzie **w stanie ogarnąć wiele problemów**, nie potrzebując przy tym specyficznych zmian, aby to osiągnać.
 
 ---
 
@@ -50,10 +50,10 @@ Komputer gra w 7 gier Atari 2600, w 6 z nich gra lepiej niż kiedykolwiek. W trz
 
 ???
 
-1. Zastosowanie jednej i tej samej techniki do każdej gry.
-2. Przez te eksperymenty starają się dojść do swojego celu, jakim jest wszechstronna sztuczna inteligencja.
-3. Po opublikowaniu pierwszej pracy, Google postanowiło ich kupić w styczniu 2014 roku za 500 mln dolarów.
-4. Druga praca pojawiła się na łamach czasopisma "Nature"... (kolejny slajd).
+1. Przez te eksperymenty starają się **dojść do swojego celu**, jakim jest wszechstronna sztuczna inteligencja.
+2. Zastosowanie **jednej i tej samej techniki** do każdej gry.
+3. Po opublikowaniu pierwszej pracy, **Google postanowiło ich kupić** w styczniu 2014 roku za 500 mln dolarów.
+4. Druga praca pojawiła się na łamach **czasopisma "Nature"**... (kolejny slajd). Model gra lepiej niż wszystkie poprzednie metody w 43 grach, a w 29 na poziomie człowieka bądź lepiej.
 
 ---
 
@@ -77,63 +77,110 @@ Powiedz co to za czasopismo.
 
 .left-column[
 ## RL
-### - Metoda
+### - Cel
 ]
 
 .right-column[
+# Breakout
+Wejściem dla przykładowego modelu są piksele aktualnego obrazu gry. Chcemy, aby ten model nauczył się ruszać paletką w lewo, w prawo i wystrzelić piłkę na początku gry. *Proste, czyż nie?*
+.center[
+![Breakout](./Reinforcement Learning.d/Breakout.png)
 ]
+]
+
+???
+
+0. **Czym jest model? Czarna puszka**, która coś dostaje i decyduje jak reagować. Dojdziemy co tam siedzi.
+1. **Model otrzymuje wejście i porusza** paletką. Ma się nauczyć jak to robić na podstawie tylko pikseli obrazu gry.
+2. Można by **nagrać rozgrywki ludzkich graczy** i kazać modelowi robić to samo. Ale nie w ten sposób się uczymy!
+3. Ludzie oraz ogólnie **zwierzęta uczą się na podstawie próbowania** i otrzymywania od czasu do czasu odpowiedzi jak im idzie. W szkole dostajemy oceny, w domu nagrody, a w pracy wypłatę. (Takie uczenie jest trudne, kolejny slajd...)
 
 ---
 
 .left-column[
 ## RL
-### - Metoda
-### - Agent
+### - Cel
+### - Problemy
 ]
 
 .right-column[
+## Nagroda jest opóźniona
+Moment dotknięcia piłeczki przez paletkę oraz otrzymania za to nagrody dzieli pewien czas. W dodatku często ciężko powiedzieć, jaka dokładnie akcja skutkowała otrzymaniem nagrody.
+
+## Czy ryzykować?
+Model czegoś się nauczył i gra nawet nieźle. Powinien brnąć w tą strategię dalej, czy próbować nowych innych technik?
+]
+
+???
+
+1. **Nagroda jest opóźniona** i ciężko powiedzieć co doprowadziło do otrzymania nagrody.
+2. **Czy ryzykować?** To pytanie każdy sobie stawia wiele razy w swoim życiu. Tak samo musi decydować model, czy warto próbować innej strategii, czy ta którą się nauczył jest wystarczająca?
+
+---
+
+layout: true
+
+.left-column[
+## RL
+### - Cel
+### - Problemy
+### - MDP
 ]
 
 ---
 
-.left-column[
-## RL
-### - Metoda
-### - Agent
-### - Nagroda
+.right-column[
+## Sformalizować uczenie ze wzmocnieniem
+.center[
+![Model](./Reinforcement Learning.d/Model.png)
+]
+Agent obserwuje środowisko. Podejmuje akcje na podstawie stanu środowiska w którym się znalazł oraz swoich zasad. Podjęta akcja wpływa na środowisko (nie koniecznie w pełni przewidywalny sposób), a agent dostaje odpowiedź w postaci nagrody (lub jej braku).
 ]
 
-.right-column[
-]
+???
+
+1. **Należy sformalizować** w jakiś sposób uczenie ze wzmocnieniem, aby móc ją zamodelować na komputerze.
+2. Wytłymacz z przykładami **czym są i jakie są relacje** agenta, środowiska, akcji, stanu, nagrody i zasad.
 
 ---
 
+.right-column[
+## Sformalizować uczenie ze wzmocnieniem
+.center[
+![Model](./Reinforcement Learning.d/MDP.png)
+]
+Zbiór stanów i akcji wraz z zasadami jak je podejmować oraz nagrodami za pewne akcje tworzą proces decyzyjny Markov-a.
+]
+
+???
+
+1. Stany, akcje, nagrody wraz z zasadami **tworzą MDP**.
+3. **Wskaż na diagram** jako przykładowy proces decyzyjny Markova.
+2. > "Mówilismy o zasadach podejmowania decyzji, naszej polityce. Ale czym ona jest?"
+   
+   **Zasady mogą być** po prostu losowym wybieraniem akcji lub bardziej wymyślnym sposobem. Optymalne jest wybieranie akcji, która daje nam największą sumę wszystkich przyszłych nagród. (Ale do tego musielibyśmy je znać... następny slajd.)
+   
+
+---
+
+layout: true
+
 .left-column[
 ## RL
-### - Metoda
-### - Agent
-### - Nagroda
+### - Cel
+### - Problemy
+### - MDP
 ### - Q-learning
 ]
 
+---
+
 .right-column[
 ]
 
 ---
 
-.left-column[
-## RL
-### - Metoda
-### - Agent
-### - Nagroda
-### - Q-learning
-### - Deep Q-learning
-]
-
-.right-column[
-]
-
----
+layout: false
 
 .left-column[
 ## Przykłady
@@ -151,7 +198,7 @@ Powiedz co to za czasopismo.
 
 ???
 
-Powiedz co przedstawiają obrazki.
+Obrazki przedstawiają pewne stany gry Seaquest, a wykres wskazuje ich wartość według modelu.
 
 ---
 
@@ -167,9 +214,9 @@ Powiedz co przedstawiają obrazki.
 
 ???
 
-1. t-SNE to metoda reprezentowania wielowymiarowej przestrzeni w 2D. Stany "podobne" leżą bliżej siebie.
-2. Obrazki są związane z konkretnymi stanami i ich wartościami (oczekiwaną nagrodą).
-3. Górne lewe i środkowe oraz dolne prawe nie są podobne percepcyjnie, ale są podobne swoją wartoscią i dlatego leżą blisko siebie. Sieć potrafiła się tego nauczyć.
+1. t-SNE to metoda reprezentowania wielowymiarowej przestrzeni w 2D. **Stany "podobne" leżą bliżej** siebie.
+2. **Obrazki** są związane z konkretnymi **stanami i ich wartościami** (oczekiwaną nagrodą).
+3. Górne lewe i środkowe oraz dolne prawe **nie są podobne percepcyjnie**, ale są podobne swoją wartoscią i dlatego leżą blisko siebie. Sieć potrafiła się tego nauczyć.
 
 ---
 
@@ -186,7 +233,8 @@ Powiedz co przedstawiają obrazki.
 
 ???
 
-Co przedstawia wykres. Procenty to jak dobrze względem człowieka poradził sobie model (w uproszczeniu).
+1. Wykres przedstawia **porównanie DQN do ludzi i innch metod**. Procenty to jak dobrze względem człowieka poradził sobie model (w uproszczeniu).
+2. **Przedstaw grę** w której model sobie w ogóle nie radzi (następny slajd) oraz w której powalił człowieka na łopatki (jeszcze kolejny slajd).
 
 ---
 
@@ -238,7 +286,7 @@ Proste środowisko i jasno zdefiniowane nagrody.
 
 .right-column[
 ## Przykładowe rozgrywki
-[Film](https://www.youtube.com/watch?v=iqXKQf2BOSE) przedstawia dwie przykładowe rozgrywki w różnych stadiach rozwoju sieci. Gry to Breakout oraz Space Invaders.
+[Film](https://www.youtube.com/watch?v=iqXKQf2BOSE) przedstawia dwie przykładowe rozgrywki z dwóch gier w różnych stadiach rozwoju sieci. Gry to Breakout oraz Space Invaders.
 ]
 
 
@@ -254,14 +302,22 @@ Model ten musiał sam nauczyć się widzieć, a następnie zrozumieć co widzi. 
 
 ???
 
-1. Model i metody uczenia te same, ale różne środowiska
-2. Powiązanie z rozwojem kory wzrokowej.
+1. Model i metody uczenia te same, ale różne środowiska. **Wielki krok w stronę wszechstronnej** sztucznej inteligencji.
+2. Taki sposób uczenia, kiedy za pewne akcje agent zostaje nagrodzony, zdaje się mieć również **powiązanie z rozwojem kory wzrokowej**. Model musiał się sam nauczyć widzieć, a nie dostawał wskazówek w tej kwestii.
 
 ---
 
+class: center, middle
+
+# Dziękuję :)
+## Pytania?
+
+---
 class: middle
 
 # Źródła
 https://www.nervanasys.com/demystifying-deep-reinforcement-learning/  
 https://arxiv.org/abs/1312.5602  
 https://www.nature.com/nature/journal/v518/n7540/full/nature14236.html
+https://en.wikipedia.org/wiki/Markov_decision_process
+https://en.wikipedia.org/wiki/Reinforcement_learning
