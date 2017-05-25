@@ -82,7 +82,7 @@ Powiedz co to za czasopismo.
 
 .right-column[
 # Breakout
-Wejściem dla przykładowego modelu są piksele aktualnego obrazu gry. Chcemy, aby ten model nauczył się ruszać paletką w lewo, w prawo i wystrzelić piłkę na początku gry. *Proste, czyż nie?*
+Wejściem dla przykładowego modelu są 84x84 piksele aktualnego oraz trzech poprzednich obrazów gry w skali szarości. Chcemy, aby ten model nauczył się ruszać paletką w lewo, w prawo i wystrzelić piłkę na początku gry. *Proste, czyż nie?*
 .center[
 ![Breakout](./Reinforcement Learning.d/Breakout.png)
 ]
@@ -91,7 +91,7 @@ Wejściem dla przykładowego modelu są piksele aktualnego obrazu gry. Chcemy, a
 ???
 
 0. **Czym jest model? Czarna puszka**, która coś dostaje i decyduje jak reagować. Dojdziemy co tam siedzi.
-1. **Model otrzymuje wejście i porusza** paletką. Ma się nauczyć jak to robić na podstawie tylko pikseli obrazu gry.
+1. **Model otrzymuje wejście i porusza** paletką. Ma się nauczyć jak to robić na podstawie tylko pikseli obrazu gry. Dostaje cztery obrazy, aby widzieć zmianę w środowisku (ruch).
 2. Można by **nagrać rozgrywki ludzkich graczy** i kazać modelowi robić to samo. Ale nie w ten sposób się uczymy!
 3. Ludzie oraz ogólnie **zwierzęta uczą się na podstawie próbowania** i otrzymywania od czasu do czasu odpowiedzi jak im idzie. W szkole dostajemy oceny, w domu nagrody, a w pracy wypłatę. (Takie uczenie jest trudne, kolejny slajd...)
 
@@ -176,7 +176,76 @@ layout: true
 ---
 
 .right-column[
+### Całkowita przyszła nagroda
+.center[![Future](./Reinforcement Learning.d/total_future_reward.png)]
+Całkowita przyszła nagroda jest sumą nagród od momentu 't' aż do moment 'n', który jest końcem gry.
+### Całkowita obniżona przyszła nagroda
+.center[![Discounted](./Reinforcement Learning.d/discounted_future_reward.png)]
+Ponieważ nasze środowisko nie jest w pełni przewidywalne, powinniśmy jakoś to uwzględnić. Zatem wielkość każdej nagrody im dalej w przyszłość tym bardziej będzie obniżona o współczynik \\(\gamma\\) (\\(0 < \gamma < 1\\)). 
+### ...tak samo, ale inaczej
+.center[![Discounted2](./Reinforcement Learning.d/discounted_future_reward_2.png)]
 ]
+
+???
+
+1. Załóżmy, że znamy przyszłość. Tak możemy zdefiniować naszą **całkowitą przyszłą nagrodę**.
+2. Ponieważ nie jesteśmy pewni, że za każdym razem otrzymamy taką samą nagrodę, musimy ją odpowiednio **obniżyć im dalej patrzymy w przyszłość**.
+3. **Zapisane inaczej**.
+
+---
+
+.right-column[
+### Funkcja wartości akcji
+.center[![Q](./Reinforcement Learning.d/Q.png)]
+Funkcja ta mówi nam, jaka jest w stanie 's' po podjęciu akcji 'a' maksymalna całkowita przyszła obniżona nagroda.
+### Teraz możemy zdefiniować naszą optymalną politykę (zasady podejmowania akcji)
+.center[![Policy](./Reinforcement Learning.d/policy.png)]
+W stanie 's' zawsze podejmujemy taką akcję 'a', która da nam największą maksymalną całkowitą przyszłą obniżoną nagrodę.
+]
+
+???
+
+1. **Funkcja wartości akcji Q** mówi nam, jaka jest w stanie 's' po podjęciu akcji 'a' maksymalna całkowita przyszła obniżona nagroda.
+2. **Optymalna polityka**: W stanie 's' zawsze podejmujemy taką akcję 'a', która da nam największą maksymalną całkowitą przyszłą obniżoną nagrodę.
+
+---
+
+.right-column[
+## Ostatnie pytanie... jak znaleźć taką funkcję?
+W najprostrzy sposób, można przedstawić ją tablicą w której każda para stan-akcja mają swój wpis. Na początku wypełnić ją losowo i w miarę grania przez naszego agenta, uaktualniać ją w następujący sposób:
+
+.center[![Learn](./Reinforcement Learning.d/learn_Q.png)]
+Istnieje matematyczny dowód, że takie uaktualnianie tablicy Q dąży do optymalnej funkcji wartości akcji.
+
+### Ale czy to jest na pewno wystarczająca metoda?
+Cztery obrazy 84x84 pikseli w skali szarości dają nam \\(256^{4\times84\times84}\approx10^{67960}\\) stanów, czyli znacznie więcej niż cząsteczek w widzialnym Wszechświecie.
+
+
+]
+
+???
+
+1. Naprostrzy sposób to przedstawić **Q jako tablicę** i uaktualniać ją równaniem Bellman-a.
+2. Kiedy par stan-akcja zrobi się więcej niż częsteczek w widzialnym Wszechświecie (\\(10^{78}\\)), należy czymś tą **tablicę zastąpić**. Można to zrobić siecią nauronową i w takim wypadku nazywa się ona Deep Q Network, a algorytm Deep Q-learning.
+
+---
+
+## Rozwiązanie problemów
+
+.right-column[
+### Nagroda jest opóźniona
+
+Nasza funkcja Q w momencie kiedy musimy podjąć akcje bierze pod uwagę, że nagroda pojawi się w przyszłości.
+
+### Czy ryzykować?
+
+W trakcie uczenia do naszej optymalnej polityki możemy dodać pewne prawdopodobieństwo podjęcia losowej akcji. Tym samym złamiemy naszą politykę, ale pozwalamy naszemy modelowi na eksplorację środowiska.
+]
+
+???
+
+1. **Nagroda jest opóźniona**, ale funkcja Q bierze to pod uwagę.
+2. **Czy ryzykować?** Podczas uczenia tak z pewnym prawdopodobieństwem.
 
 ---
 
