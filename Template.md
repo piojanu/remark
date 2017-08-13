@@ -19,7 +19,7 @@ with code samples
 
 ## Display formula:
 
-$$e^{i\pi} + 1 = 0$$
+$$R\_t = r\_t + \gamma r\_{t+1} + \gamma^2 r\_{t+2} + ... + \gamma^{n-t} r\_n$$
 ]
 
 ---
