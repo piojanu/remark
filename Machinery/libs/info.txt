@@ -1,2 +1,2 @@
-KaTeX version: 0.8.1
+KaTeX version: 0.8.3
 Remark version: 0.14.0
