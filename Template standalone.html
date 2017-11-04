@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>KaTeX example</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="Machinery/fonts/UbuntuMono/UbuntuMono.css">
+    <link rel="stylesheet" href="Machinery/fonts/BioRhyme/BioRhyme.css">
+    <link rel="stylesheet" href="Machinery/fonts/Raleway/Raleway.css">
+    <link rel="stylesheet" href="Machinery/style.css">
+  </head>
+  <body>
+    <textarea id="source">
+name: title
+class: center, middle, title
+
+# \\(\KaTeX{}\\) in remark
+with code samples
+
+---
+
+.left-column[
+ ## \\(\KaTeX{}\\)
+### - Formulas
+]
+
+.right-column[
+## Inline formulas:
+
+1. This is an inline integral: \\(\int_a^bf(x)dx\\)
+2. More \\(x={a \over b}\\) formulate.
+
+## Display formula:
+
+$$e^{i\pi} + 1 = 0$$
+]
+
+---
+
+.left-column[
+ ## \\(\KaTeX{}\\)
+### - Formulas
+### - Code
+]
+
+.right-column[
+.pull-left[
+## Inline:
+
+```markdown
+\\(\int_a^bf(x)dx\\)
+\\(x={a \over b}\\)
+```
+]
+
+.pull-right[
+## Display:
+
+```markdown
+$$e^{i\pi} + 1 = 0$$
+```
+]
+
+This code represents how to write LaTeX formulas. You can inline them (left) with other content or put them in their own block (right).
+
+.footnote[.red[*] Example footnote :)]
+]
+
+---
+
+# HTML sample
+
+```xml
+<!DOCTYPE html>
+<html>
+  <head>
+    <style type="text/css">
+      /* Slideshow styles */
+    </style>
+  </head>
+  <body>
+*    <textarea id="source">
+      <!-- Slideshow Markdown -->
+    &lt;/textarea&gt;
+*    <script src="remark.js">
+    </script>
+    <script>
+*      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
+```
+    </textarea>
+    <script src="Machinery/libs/remark.min.js"></script>
+    <script src="Machinery/libs/katex.min.js"></script>
+    <script src="Machinery/libs/auto-render.min.js"></script>
+    <link rel="stylesheet" href="Machinery/libs/katex.min.css">
+    <script type="text/javascript">
+      // Auto render math
+      var renderMath = function() {
+        renderMathInElement(document.body);
+      }
+
+      // Macros
+      remark.macros.scale = function (percentage) {
+        var url = this;
+        return '<img src="' + url + '" style="width: ' + percentage + '" />';
+      };
+      remark.macros.super = function () {
+	    var func = arguments.callee;
+        if (typeof func.counter == 'undefined') {
+          func.counter = 0;
+        }
+        ++func.counter;
+	  
+        return '<sup class="red">' + func.counter + '</sup>';
+      };
+      remark.macros.script = function () {
+	    var func = arguments.callee;
+        if (typeof func.counter == 'undefined') {
+          func.counter = 0;
+        }
+        ++func.counter;
+	  
+        return '<sup class="red">' + func.counter + '</sup>';
+      };
+
+      // Run remark!
+      var slideshow = remark.create({
+	      highlightStyle: 'tomorrow-night',
+          highlightLines: true
+	  }, renderMath);
+    </script>
+  </body>
+</html>

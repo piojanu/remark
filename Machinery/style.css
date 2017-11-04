@@ -1,0 +1,98 @@
+/* Body and Headers */
+body {
+  font-family: 'Raleway', serif;
+}
+h1, h2, h3 {
+  font-family: 'BioRhyme', sans-serif;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+.remark-slide-content h1 { font-size: 3em; color: #1B5C7F }
+.remark-slide-content h2 { font-size: 2em; color: #54B1E3 }
+.remark-slide-content h3 { font-size: 1.2em; color: #85D1F4 }
+
+/* Logo and bottom bar */
+.remark-slide-number {
+  bottom: 14px;
+  right: 14px;
+}
+.remark-slide-content:not(.title) {
+  border-bottom: 7px solid #1B5C7F;
+}
+.remark-slide-content:not(.title):after {
+  content: "";
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  height: 27px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url('imgs/Gradient/Gradient_logo_text_horizontal.png'); 
+}
+
+/* Links */
+a, a > code {
+  color: rgb(249, 38, 114);
+  text-decoration: none;
+}
+
+/* Code */
+code {
+  background: #e7e8e2;
+  border-radius: 5px;
+}
+.remark-code, .remark-inline-code { font-family: 'Ubuntu Mono', monospace; }
+.remark-code-line-highlighted     { background-color: #3F3C3A; }
+
+/* Title slides */
+.title {
+  background: #272822;
+  color: #B7B8B1;
+  text-shadow: 0 0 20px #333;
+}
+.title h1, .title h2 {
+  color: #f3f3f3;
+  line-height: 0.8em;
+}
+
+/* Footnote */
+.footnote {
+  position: absolute;
+  bottom: 3em;
+font-size: 0.8em;
+}
+.red { color: #fa0000; }
+
+/* Two-column layout */
+.left-column {
+  width: 20%;
+  height: 92%;
+  float: left;
+}
+.left-column h2, .left-column h3 {
+  color: #B6E3F8;
+  margin: 0.2em 0
+}
+.left-column h2:last-of-type, .left-column h3:last-child {
+  color: #1B5C7F;
+  margin: 0.2em 0
+}
+.right-column {
+  width: 75%;
+  float: right;
+  /* padding-top: 1em; */
+}
+
+/* Two blocks side by side */
+.pull-left {
+  float: left;
+  width: 47%;
+}
+.pull-right {
+  float: right;
+  width: 47%;
+}
+.pull-right ~ p {
+  clear: both;
+}
