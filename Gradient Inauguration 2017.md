@@ -250,6 +250,139 @@ class: middle, center, title
 
 class: middle, center, title
 
+# AtariAI
+### Sztuczna inteligencja i Uczenie ze wzmocnieniem
+
+???
+
+# Aktualnie: One Man Army
+## Docelowo grupa zajmująca się różnymi projektami z RL.
+
+---
+
+.left-column[
+## AtariAI
+### Wcześniej
+]
+
+.right-column[
+.center[
+# PG Pong
+.pull-left[
+### Przed
+![Random](./Gradient Inauguration 2017.d/AtariAI/random_pg.gif)
+]
+.pull-right[
+### Po
+![Trained](./Gradient Inauguration 2017.d/AtariAI/trained_pg.gif)
+]]]
+
+???
+
+1. Agent przyjmuje **obrazy na wejściu**,
+2. Na podstawie **obrazu decyduje o akcji**,
+3. Z wbudowanej w grę **punktacji uczy się** podejmować lepsze akcje.
+
+_Wskaż na to jak grał **przed**, a jak grał **po** uczeniu._
+
+---
+
+.left-column[
+## AtariAI
+### Wcześniej
+]
+
+.right-column[
+.center[
+# Teoria
+]
+$$V^\*(s) = \max\_a\sum\_{s'}P(s'|s,a)[R(s,a,s') + \gamma V^\*(s')]$$
+
+1. Dużo teoretycznych przygotowań,
+
+2. Trochę prezentacji na kole,
+
+3. Kilka praktycznych ćwiczeń.
+]
+
+.right-column[
+.center[
+## Materiały znajdą się w Bazie Wiedzy.
+]]
+
+???
+
+0. Czy ktoś kojarzy to równanie? *Bellman optimality equation*
+  * **Układ równań** z unikatowym rozwiązaniem V\*(s),
+  * Od V\*(S) do **optymalnej policy** jest rzut kapeluszem.
+
+1. Teoria to **nic nudnego**! Teoria znaczy:
+  * **Wspaniałe wykłady**, wspaniałych prelegentów,
+  * **Ciekawe książki**, wybitnych osób,
+  * **Interesujące blogi**, pasjonatów RL.
+
+2. Polecam każdemu, aby **dzielił się swoją wiedzą** na spotkaniach. Jest to obopólna korzyść.
+
+3. Zawsze należy **utrwalić swoją teorię w praktycznych** ćwiczeniach "matematycznych" i programistycznych.
+
+Materiały będą w **bazie wiedzy** lub można się **ze mną kontaktować**.
+
+---
+
+.left-column[
+## AtariAI
+### Wcześniej
+### Teraz
+]
+
+.right-column[
+.center[
+# Roll-a-Ball
+
+![RollaBall](./Gradient Inauguration 2017.d/AtariAI/roll-a-ball.jpg)
+
+## Unity3D ML-Agent
+
+![:scale 50%](./Gradient Inauguration 2017.d/AtariAI/unity-logo.jpg)
+]]
+
+???
+
+# Wolność tworzenia środowisk do nauki agentów!
+
+Środowisko **w Unity3D**, a model uczenia ze wzmocnieniem **w Pythonie** w jakimkolwiek framework-u.
+
+1. Aktualnie **Roll-a-ball**, aby poznać to narzędzie.
+2. **Następnie kolejne** projekty!
+
+---
+
+.left-column[
+## AtariAI
+### Wcześniej
+### Teraz
+### Za rogiem
+]
+
+.right-column[
+.center[
+## Uczenie z preferencji człowieka
+![:scale 55%](./Gradient Inauguration 2017.d/AtariAI/human_pref.png)
+
+## Poruszanie się jak prawdziwe organizmy
+![:scale 80%](./Gradient Inauguration 2017.d/AtariAI/locomotion.png)
+]]
+
+???
+
+1. Opisz jaki problem rozwiązuje uczenie z preferencji człowieka/**odwrócone uczenie ze wzmocnieniem**.
+
+2. Wyjaśnij o co chodziło w *"Terrain-Adaptive Locomotion Skills Using Deep Reinforcement Learning"* oraz o projekcie **Dorsz**.
+
+---
+
+class: middle, center, title
+
 ## Shut Up and Take My Money
 ### Czyli od czego zacząć?
 
