@@ -307,7 +307,7 @@ $$V^\*(s) = \max\_a\sum\_{s'}P(s'|s,a)[R(s,a,s') + \gamma V^\*(s')]$$
 
 .right-column[
 .center[
-## Materiały znajdą się w Bazie Wiedzy.
+## Materiały znajdują się w Bazie Wiedzy.
 ]]
 
 ???
@@ -325,7 +325,7 @@ $$V^\*(s) = \max\_a\sum\_{s'}P(s'|s,a)[R(s,a,s') + \gamma V^\*(s')]$$
 
 3. Zawsze należy **utrwalić swoją teorię w praktycznych** ćwiczeniach "matematycznych" i programistycznych.
 
-Materiały będą w **bazie wiedzy** lub można się **ze mną kontaktować**.
+Materiały w **bazie wiedzy** lub można się **ze mną kontaktować**.
 
 ---
 
