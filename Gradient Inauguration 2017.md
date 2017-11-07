@@ -4,6 +4,20 @@ class: center, middle
 ![Gradient](./Machinery/imgs/Gradient/Gradient_logo.png)
 # Witajcie!
 
+???
+
+## Witam nowe i stare twarze.
+
+*Przedstaw się...*
+
+Chciałbym przedstawić wam nasze koło naukowe, powiemy sobie o tym:
+* Kim jesteśmy?
+* Jaki mamy cel?
+* Organizacja spotkań
+* Gdzie żyje społeczność po za spotkaniami
+* Nasze działania
+* Jak dołączyć do koła i zacząć przygodę z ML?
+
 ---
 
 class: center, middle, title
@@ -234,9 +248,11 @@ class: middle, center, title
 
 ???
 
-## 1. Prezentacje *(wspominałeś)*,
-## 2. Newsletter *(opowiedz)*,
-## 3. PROJEKTY!!! *(zaproś)...*
+#### 1. Prezentacje *(wspominałeś)*,
+#### 2. Newsletter *(opowiedz)*,
+#### 3. Prace naukowe *(członkowie decydują się na dyplomy z ML)*
+#### 4. Współpraca z sektorem gospodarczym *(VoiceLab, CTA.ai)*
+#### 5. PROJEKTY!!! *(zaproś)...*
 
 *Teraz zaczyna się część prezentowania projektów...*
 * Emotion Mini Utility - Paweł Kopeć
@@ -308,6 +324,7 @@ $$V^\*(s) = \max\_a\sum\_{s'}P(s'|s,a)[R(s,a,s') + \gamma V^\*(s')]$$
 .right-column[
 .center[
 ## Materiały znajdują się w Bazie Wiedzy.
+### Ale również w repo projektu w sekcji "How to start AI&RL journey?".
 ]]
 
 ???
